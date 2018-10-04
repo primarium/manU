@@ -72,4 +72,19 @@ describe('homepage', () => {
         expect(cy.get('#space1')).to.exist;
     })
 
+    // GIVEN I have a space created, WHEN I click on that space,
+    // THEN I see the details of the space (see mock).
+    it('should open the details of a space when that space is clicked on', () => {
+        // setup
+        cy.visit('http://localhost:3000');
+
+        // exercise 
+        cy.get('#space0').click();
+
+        // assert
+        expect(cy.get('.spaceHeading')).to.be.equal('seeded space');
+        expect(cy.get('.detailsHeading')).to.have.lengthOf(2);
+        expect(cy.get('.detailsData')).to.have.lengthOf(2);
+    })
+
 })

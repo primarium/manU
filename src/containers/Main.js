@@ -5,6 +5,7 @@ import * as actions from '../actions/actions'
 const mapStateToProps = (state) => {
     return {
         currentView: state.currentView,
+        selectedSpace: state.selectedSpace,
     }
 }
 

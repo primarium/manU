@@ -2,6 +2,7 @@ import superagent from 'superagent'
 export const CHANGE_VIEW = 'CHANGE_VIEW';
 export const CREATE_SPACE = 'CREATE_SPACE';
 export const RETRIEVE_SPACES = 'RETRIEVE_SPACES';
+export const EDIT_SPACE = 'EDIT_SPACE';
 export const changeViewCreator = (newView) => {
     return {
         type: CHANGE_VIEW,
@@ -28,6 +29,13 @@ export function getSpaces() {
             dispatch(updateStoredSpaces(res.body));
         });
     };
+}
+export function goToSpace(space) {
+    console.log('ya fired')
+    return {
+        type: EDIT_SPACE,
+        payload: space
+    }
 }
 
 export function addSpace(space) {

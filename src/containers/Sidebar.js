@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Sidebar from '../components/Sidebar';
-import { changeViewCreator } from '../actions/actions'
+import { changeViewCreator, goToSpace } from '../actions/actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         changeView: (newView) => dispatch(changeViewCreator(newView)),
+        goToSpace: (selectedSpace) => dispatch(goToSpace(selectedSpace))
     }
 }
 

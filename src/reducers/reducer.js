@@ -3,6 +3,7 @@ import superagent from 'superagent'
 const initialState = {
     currentView: 'Home',
     spaces: [],
+    selectedSpace: undefined
 };
 
 
@@ -16,9 +17,13 @@ const reducer = (state = initialState, action) => {
             newState.spaces.push(action.payload)
             return newState
         case actions.RETRIEVE_SPACES:
-            console.log('in the reducer')
             newState.spaces = action.payload
             return newState
+        case actions.EDIT_SPACE:
+            console.log(action.payload)
+            newState.selectedSpace = action.payload
+            newState.currentView = 'EditSpace'
+            return newState;
         default:
             return state;
     }

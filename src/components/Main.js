@@ -2,28 +2,36 @@ import React, { Fragment } from 'react';
 import Sidebar from '../containers/Sidebar';
 import AddSpace from '../containers/AddSpace';
 import './Main.css';
+import EditSpace from './EditSpace';
 
-const Main = ({ currentView, changeView, updateSidebar }) => {
+const Main = ({ currentView, selectedSpace, updateSidebar }) => {
 
     let viewPane = () => {
         return (
             <div></div>
         )
     }
-
-    if (currentView === 'AddSpace') {
+    if (selectedSpace) {
+        viewPane = () => {
+            return (
+                <EditSpace space={selectedSpace} />
+            )
+        }
+    }
+    else if (currentView === 'AddSpace') {
         viewPane = () => {
             return (
                 <AddSpace />
             )
         }
 
+    } else {
+        updateSidebar();
     }
 
-    updateSidebar();
+
 
     return (
-
         <div className='container'>
             <div className='sidebar'>
                 <Sidebar />

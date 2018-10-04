@@ -1,16 +1,17 @@
 import React, { Fragment } from 'react'
 
-const Sidebar = ({ changeView, spaces }) => {
+const Sidebar = ({ changeView, spaces, goToSpace }) => {
     const addNewSpace = () => {
         changeView('AddSpace')
     }
+
     const spacesToDisplay = () => {
         if (!spaces || spaces.length == 0) {
             return <div></div>
         }
         return <ul> {spaces.map((s, idx) => {
             return (
-                <li id={'space' + idx} key={s.id} className='spaceLink'>{s.name} 0%</li>
+                <a id={'space' + idx} key={s.id} className='spaceLink' onClick={() => { goToSpace(s) }}>{s.name} 0%</a>
             )
 
         })}
