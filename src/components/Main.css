@@ -1,0 +1,11 @@
+.container {
+    display:flex;
+  }
+
+  .sidebar {
+      /* border-style: solid; */
+  }
+
+  .viewPane {
+      /* border-style: solid; */
+  }

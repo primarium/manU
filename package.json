@@ -1,0 +1,45 @@
+{
+  "name": "mancityrules",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bookshelf": "^0.13.3",
+    "debug": "~2.6.9",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "knex": "^0.15.2",
+    "pg": "^7.5.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-scripts": "2.0.3",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "superagent": "^4.0.0-beta.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start-server": "node ./bin/www",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cypress": "^3.1.0",
+    "deep-freeze": "0.0.1",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
+  }
+}
