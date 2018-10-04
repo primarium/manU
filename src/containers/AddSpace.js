@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createSpace: (space) => { dispatch(actions.createSpace(space)) }
+        createSpace: (space) => { dispatch(actions.addSpace(space)) }
     }
 }
 

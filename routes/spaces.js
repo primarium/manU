@@ -10,7 +10,10 @@ router.get('/', async function (req, res, next) {
 });
 
 /* POST a new space. */
-router.post('/', function (req, res, next) {
+router.post('/', async function (req, res, next) {
+    console.log('you called med')
+    const insert = await Space.forge({}).save(req.body);
+    res.json(insert)
 });
 
 module.exports = router;

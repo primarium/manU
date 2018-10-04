@@ -30,5 +30,15 @@ export function getSpaces() {
     };
 }
 
+export function addSpace(space) {
+    return function (dispatch) {
+        console.log('ifired')
+        return superagent.post('/spaces/').send(space).then(function (res) {
+            //space.id = res.id;
+            dispatch(createSpace(space))
+        })
+    }
+}
+
 
 

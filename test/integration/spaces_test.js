@@ -30,4 +30,21 @@ describe('Spaces', () => {
             expect(res.body[0].name).to.equal(space.name)
         })
     })
+
+    describe('POST /spaces', () => {
+        it('insert a new space in the backend data storage', async () => {
+            const space = {
+                name: 'some_name',
+                diskquota_mb: 100,
+                memoryquota_mb: 100
+            }
+
+            const res = await api.post('/spaces').send(space);
+            expect(res.body.id).to.exist;
+            space.id = res.body.id;
+            const getItemInDB = await Space.forge({}).where({ id: res.body.id }).fetch()
+            expect(getItemInDB.attributes).to.eql(space);
+
+        })
+    })
 })
