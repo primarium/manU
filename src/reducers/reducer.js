@@ -16,6 +16,7 @@ const reducer = (state = initialState, action) => {
             newState.spaces.push(action.payload)
             return newState
         case actions.RETRIEVE_SPACES:
+            console.log('in the reducer')
             newState.spaces = action.payload
             return newState
         default:

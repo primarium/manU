@@ -3,7 +3,7 @@ import Sidebar from '../containers/Sidebar';
 import AddSpace from '../containers/AddSpace';
 import './Main.css';
 
-const Main = ({ currentView, changeView }) => {
+const Main = ({ currentView, changeView, updateSidebar }) => {
 
     let viewPane = () => {
         return (
@@ -20,8 +20,10 @@ const Main = ({ currentView, changeView }) => {
 
     }
 
+    updateSidebar();
 
     return (
+
         <div className='container'>
             <div className='sidebar'>
                 <Sidebar />

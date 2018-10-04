@@ -49,14 +49,10 @@ describe('reducer', () => {
     });
     describe('RETRIEVE_SPACES', () => {
         it('retrieves the spaces currently stored in the database and stores in spaces', () => {
-            // setup
-            const action = actions.getSpaces();
-
-            // exercise
-            const actual = reducer(undefined, action)
-
+            const actual = reducer(undefined, { type: actions.RETRIEVE_SPACES, payload: [1, 2, 3] });
             // assert
-            expect(actual.spaces).to.have.lengthOf(1);
+            expect(actual.spaces).to.have.lengthOf(3);
+
         })
     })
 });

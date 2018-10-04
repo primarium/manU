@@ -21,9 +21,14 @@ export const updateStoredSpaces = (spaces) => {
     }
 }
 
-export const getSpaces = () => {
-    return async (dispatch, getState) => {
-        const spaces = await superagent.get('http://localhost:8080/spaces/');
-        dispatch(updateStoredSpaces(spaces))
-    }
+export function getSpaces() {
+    return function (dispatch, getState) {
+        return superagent.get('/spaces/').then(function (res) {
+            // console.log(res.body)
+            dispatch(updateStoredSpaces(res.body));
+        });
+    };
 }
+
+
+
